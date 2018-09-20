@@ -1,0 +1,42 @@
+.keyword {
+    -fx-fill: purple;
+    -fx-font-weight: bold;
+}
+.opcode {
+    -fx-fill: #0000BB;
+    -fx-font-weight: bold;
+}
+.comment{
+    -fx-fill: grey;
+    -fx-font-weight: bold;
+    -fx-font-style: italic
+}
+.label{
+    -fx-fill: #AA0000;
+    -fx-font-weight: bold;
+}
+.linenumber{
+    -fx-fill: #AAAAAA;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+}
+.classortype{
+    -fx-fill: #AA7755;
+    -fx-font-weight: bold;
+    -rtfx-underline-color: #AA7755;
+    -rtfx-underline-width: 0.7;
+    -rtfx-underline-cap: butt;
+}
+.string{
+    -fx-fill: green;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+}
+.register{
+    -fx-fill: #ff00ff;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+}
+.text-area {
+    -fx-control-inner-background: black;
+}
