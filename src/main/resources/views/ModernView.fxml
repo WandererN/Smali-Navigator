@@ -18,7 +18,8 @@
             <Menu mnemonicParsing="false" text="%file_menu_caption">
                 <MenuItem mnemonicParsing="false" onAction="#openMenuHandler" text="%open_menu_caption" />
                 <MenuItem mnemonicParsing="false" onAction="#decompileMenuHandler" text="%decompile_and_open_menu_caption" />
-                <MenuItem disable="true" fx:id="compile_menu" mnemonicParsing="false" onAction="#compileMenuHandler" text="%compile_menu_caption" />
+                <MenuItem fx:id="compile_menu" disable="true" mnemonicParsing="false" onAction="#compileMenuHandler" text="%compile_menu_caption" />
+                <MenuItem fx:id="close_menu" disable="true" mnemonicParsing="false" onAction="#closeProject" text="%close_project_menu_caption" />
                 <SeparatorMenuItem />
                 <MenuItem mnemonicParsing="false" onAction="#onExitMenuHandler" text="%exit_menu_caption" />
             </Menu>
@@ -68,7 +69,7 @@
                </SplitPane>
            </AnchorPane>
            <AnchorPane minHeight="0.0" minWidth="0.0">
-               <TextArea fx:id="log_textbox" layoutY="18.0" prefHeight="84.0" prefWidth="437.0"  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               <TextArea fx:id="log_textbox" editable="false" layoutY="18.0" prefHeight="84.0" prefWidth="437.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
            </AnchorPane>
        </SplitPane>
    </center>

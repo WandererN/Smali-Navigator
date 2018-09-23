@@ -29,11 +29,13 @@ class ModernView : View(messages["app_title"]) {
     private val tabPane: TabPane by fxid("sources_tab_pane")
     private val filesTreeView: TreeView<File> by fxid("project_tree_view")
     private val packageTreeView: TreeView<SmaliClass> by fxid("package_tree_view")
-    private val logTextBox: TextArea by fxid("log_textbox")
+    private val compileMenu: MenuItem by fxid("compile_menu")
+    private val closeMenu: MenuItem by fxid("close_menu")
+    private val logTextArea: TextArea by fxid("log_textbox")
     private val logger = LogManager.getLogger(this.javaClass.name)
 
     init {
-        TextViewLoggerAppender.loggingText = logTextBox
+        TextViewLoggerAppender.loggingTextArea = logTextArea
     }
 
     private fun findOrCreatePackage(packageName: String, root: TreeItem<SmaliClass>): TreeItem<SmaliClass> {
@@ -70,7 +72,7 @@ class ModernView : View(messages["app_title"]) {
         root.children.addAll(filesList)
     }
 
-    private suspend fun fillPackageView(root: TreeItem<SmaliClass>) {
+    private fun fillPackageView(root: TreeItem<SmaliClass>) {
         for (clazz in Workspace.loadedClasses) {
             val treeItem = findOrCreatePackage(clazz.packageName, root)
             treeItem.children.add(TreeItem(clazz))
@@ -90,6 +92,7 @@ class ModernView : View(messages["app_title"]) {
         if (newTab == null) {
             val lines = file.readLines()
             val tb = TabEditorView(file)
+            logger.info(tb.smaliClass.makeInfoString())
             tb.editorWindowView.replaceText(lines.joinToString("\n"))
             tb.methodsNamesListView.items.addAll(tb.smaliClass.methods)
             tabPane.tabs.add(tb)
@@ -98,12 +101,30 @@ class ModernView : View(messages["app_title"]) {
         tabPane.selectionModel.select(newTab)
     }
 
-    fun loadProject(projectDir: File) {
-        filesTreeView.root = TreeItem<File>(projectDir)
+    fun closeProject() {
+        Workspace.loadedClasses.clear()
+        Workspace.workingDir = null
+        tabPane.tabs.removeAll()
+        filesTreeView.root?.children?.removeAll()
+        packageTreeView.root?.children?.removeAll()
+        filesTreeView.root = null
+        packageTreeView.root = null
+        packageTreeView.refresh()
+        compileMenu.isDisable = true
+        closeMenu.isDisable = true
+    }
+
+    private fun loadProject(projectDir: File) {
+
+        title = AppConfig.CONST_APP_TITLE + Workspace.workingDir?.canonicalPath
+
         val rootSmali = SmaliClass()
         rootSmali.isPackage = true
         rootSmali.name = projectDir.name
+
         packageTreeView.root = TreeItem(rootSmali)
+        filesTreeView.root = TreeItem<File>(projectDir)
+
         packageTreeView.cellFormat {
             text = it.name
             if (it.sourceName != "")
@@ -148,6 +169,11 @@ class ModernView : View(messages["app_title"]) {
             fillTreeView(filesTreeView.root, projectDir)
             logger.info("Reading package treeview")
             fillPackageView(packageTreeView.root)
+            logger.info("Project loaded!")
+            Platform.runLater {
+                compileMenu.isDisable = false
+                closeMenu.isDisable = false //TODO move to function
+            }
         }
     }
 
@@ -165,6 +191,7 @@ class ModernView : View(messages["app_title"]) {
         fileChooser.title = "Select apk to disassemble..."
         fileChooser.extensionFilters.add(FileChooser.ExtensionFilter("Android application", "*.apk"))
         val apkFile = fileChooser.showOpenDialog(primaryStage) ?: return
+        closeProject()
         val projectFolder = File(AppConfig.PROJECT_ROOT + File.separator + apkFile.nameWithoutExtension)
         GlobalScope.launch {
             ApkToolWrapper.decompile(apkFile.absolutePath, projectFolder.canonicalPath)
@@ -172,7 +199,7 @@ class ModernView : View(messages["app_title"]) {
                 Workspace.workingDir = projectFolder
                 loadProject(projectFolder)
             }
-        }.start()
+        }
     }
 
     fun compileMenuHandler() {
@@ -182,7 +209,7 @@ class ModernView : View(messages["app_title"]) {
         val apkFile = fileChooser.showSaveDialog(primaryStage) ?: return
         GlobalScope.launch {
             Workspace.workingDir?.canonicalPath?.let { ApkToolWrapper.compile(it, apkFile.canonicalPath) }
-        }.start()
+        }
     }
 
     fun findInProject() {
