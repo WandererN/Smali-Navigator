@@ -9,21 +9,22 @@ object HighlightsLoader {
         return res
     }
 
-    private fun generateGroupPatternString(groupName: String, validNames: List<String>, endWith: String = ""): String {
-        return "(?<$groupName>(${validNames.joinToString("|")}))$endWith"
+    private fun generateGroupPatternString(groupName: String, validNames: List<String>, startWith:String="",endWith: String = ""): String {
+        return "($startWith(?<$groupName>(${validNames.joinToString("|")}))$endWith)"
     }
 
     fun generateCommentString() = generateGroupPatternString("COMMENT", listOf("#[^\\n]*"))
-    fun generateLabelsString() = "(\\s*|^)" + generateGroupPatternString("LABEL", listOf("\\:[^\\s]*"))
+    fun generateLabelsString() =  generateGroupPatternString("LABEL", listOf("\\:[^\\s]*"),startWith = "(\\s*|^)")
     fun generateLineNamString() = generateGroupPatternString("LINENUMBER", listOf(".line[^\n]*"))
     fun generateStringString() = generateGroupPatternString("STRING", listOf("\".*\""))
-    fun generateClassAndTypesString() = generateGroupPatternString("CLASSORTYPE", listOf("L[^;]*"))
+    fun generateClassAndTypesString() = generateGroupPatternString("CLASSORTYPE", listOf("L[^;]*"),startWith = "(\\s*|:)")
     fun generateRegistersString() = generateGroupPatternString("REGISTER", listOf("(v|p)\\d"))
-    fun generateGlobalPattern(vararg args: String): Pattern = Pattern.compile(args.joinToString("|"))
     fun generateOpcodesString() = generateGroupPatternString("OPCODE",
-            loadFromResource("/highlights/opcodes.txt"), "(\\s|$)")
+            loadFromResource("/highlights/opcodes.txt"), endWith = "(\\s|$)")
 
     fun generateKeywordsString() = generateGroupPatternString("KEYWORD",
-            loadFromResource("/highlights/keywords.txt"), "(\\s|$)")
+            loadFromResource("/highlights/keywords.txt"), endWith = "(\\s|$)")
+
+    fun generateGlobalPattern(vararg args: String): Pattern = Pattern.compile(args.joinToString("|"))
 
 }

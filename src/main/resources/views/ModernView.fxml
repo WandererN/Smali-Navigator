@@ -68,7 +68,7 @@
                </SplitPane>
            </AnchorPane>
            <AnchorPane minHeight="0.0" minWidth="0.0">
-               <TextArea fx:id="log_textbox" layoutY="18.0" prefHeight="84.0" prefWidth="437.0" text="hello" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               <TextArea fx:id="log_textbox" layoutY="18.0" prefHeight="84.0" prefWidth="437.0"  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
            </AnchorPane>
        </SplitPane>
    </center>

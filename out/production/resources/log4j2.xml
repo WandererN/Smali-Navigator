@@ -2,7 +2,7 @@
 <Configuration status="WARN" packages="com.jh.logs">
     <Appenders>
         <TextViewLoggerAppender name="TextViewAppender">
-            <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss} [%t] %-5p - %msg%n"/>
+            <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss} %-5p - %msg%n"/>
         </TextViewLoggerAppender>
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss} [%t] %-5p - %msg%n"/>

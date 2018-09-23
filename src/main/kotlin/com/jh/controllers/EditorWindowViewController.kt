@@ -36,11 +36,12 @@ class EditorWindowViewController(private val codeArea: CodeArea, var executor: E
                     generateOpcodesString(),
                     generateKeywordsString(),
                     generateCommentString(),
+                    generateClassAndTypesString(),
                     generateLabelsString(),
                     generateLineNamString(),
-                    generateClassAndTypesString(),
                     generateStringString(),
-                    generateRegistersString())
+                    generateRegistersString()
+            )
 
         }
     }
@@ -55,25 +56,33 @@ class EditorWindowViewController(private val codeArea: CodeArea, var executor: E
         return task
     }
 
+    private val highlightsToCSSClassesMap = hashMapOf(
+            "CLASSORTYPE" to "classortype",
+            "KEYWORD" to "keyword",
+            "OPCODE" to "opcode",
+            "COMMENT" to "comment",
+            "LABEL" to "label",
+            "LINENUMBER" to "linenumber",
+            "STRING" to "string",
+            "REGISTER" to "register"
+    )
+
     fun computeHighlighting(text: String): StyleSpans<Collection<String>> {
         var lastKwPos = 0
         val matcher = highlightsPattern.matcher(text)
         val spansBuilder = StyleSpansBuilder<Collection<String>>()
         while (matcher.find()) {
-            val styleClass = when {
-                matcher.group("KEYWORD") != null -> "keyword"
-                matcher.group("OPCODE") != null -> "opcode"
-                matcher.group("COMMENT") != null -> "comment"
-                matcher.group("LABEL") != null -> "label"
-                matcher.group("LINENUMBER") != null -> "linenumber"
-                matcher.group("CLASSORTYPE") != null -> "classortype"
-                matcher.group("STRING") != null -> "string"
-                matcher.group("REGISTER") != null -> "register"
-                else -> null
+            var styleClass: String? = null
+            var matchGroupName: String? = null
+            for (elem in highlightsToCSSClassesMap) {
+                matcher.group(elem.key)?.let {
+                    styleClass = elem.value
+                    matchGroupName = elem.key
+                }
             }
-            spansBuilder.add(Collections.emptyList(), matcher.start() - lastKwPos)
-            spansBuilder.add(Collections.singleton(styleClass!!), matcher.end() - matcher.start())
-            lastKwPos = matcher.end()
+            spansBuilder.add(Collections.emptyList(), matcher.start(matchGroupName) - lastKwPos)
+            spansBuilder.add(Collections.singleton(styleClass!!), matcher.end(matchGroupName) - matcher.start(matchGroupName))
+            lastKwPos = matcher.end(matchGroupName)
         }
         spansBuilder.add(Collections.emptyList(), text.length - lastKwPos)
         return spansBuilder.create()

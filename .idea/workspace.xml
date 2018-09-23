@@ -2,34 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b06eb7d-b209-4b03-810e-8c98c6bf6876" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/logs/TextViewLoggerAppender.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernTabEditorView.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernView.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ModernView.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/views/ModernTabEditorView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/views/ModernView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/SmaliNavigator_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/SmaliNavigator_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/SmaliNavigator_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/SmaliNavigator_test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/Messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/Messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/ModernView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/highlights/keywords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/highlights/keywords.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/AppConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/AppConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/SmaliAppLauncher.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/SmaliAppLauncher.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/Workspace.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/Workspace.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/controllers/MainViewController.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/extToolLogger/ConsoleTextLogger.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/extToolLogger/ITextLogger.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/extToolLogger/TextBoxTextLogger.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/toolsWrappers/ApkToolWrapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/toolsWrappers/ApkToolWrapper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/util/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/util/Utils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/views/ExternalToolLoggerView.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/views/MainView.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Messages.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Messages.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ModernView.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/highlights/keywords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/highlights/keywords.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/views/ModernView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/views/ModernView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/HighlightsLoader.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/HighlightsLoader.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/controllers/EditorWindowViewController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/controllers/EditorWindowViewController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/logs/TextViewLoggerAppender.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/logs/TextViewLoggerAppender.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/ModernView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/ModernView.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -127,11 +108,11 @@
         <counts>
           <entry key="configurationFile" value="1" />
           <entry key="cs" value="1" />
-          <entry key="css" value="1" />
-          <entry key="fxml" value="16" />
+          <entry key="css" value="2" />
+          <entry key="fxml" value="17" />
           <entry key="gradle" value="13" />
           <entry key="java" value="53" />
-          <entry key="kt" value="131" />
+          <entry key="kt" value="133" />
           <entry key="png" value="3" />
           <entry key="properties" value="8" />
           <entry key="txt" value="14" />
@@ -140,14 +121,14 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="C#" value="1" />
-          <entry key="CSS" value="1" />
+          <entry key="CSS" value="2" />
           <entry key="Groovy" value="13" />
           <entry key="Image" value="3" />
           <entry key="JAVA" value="53" />
-          <entry key="Kotlin" value="131" />
+          <entry key="Kotlin" value="133" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="Properties" value="8" />
-          <entry key="XML" value="17" />
+          <entry key="XML" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -157,7 +138,7 @@
           <entry key="fxml" value="864" />
           <entry key="gradle" value="745" />
           <entry key="java" value="57" />
-          <entry key="kt" value="30749" />
+          <entry key="kt" value="31508" />
           <entry key="properties" value="47" />
           <entry key="txt" value="117" />
           <entry key="xml" value="189" />
@@ -169,7 +150,7 @@
           <entry key="CSS" value="451" />
           <entry key="Groovy" value="745" />
           <entry key="JAVA" value="57" />
-          <entry key="Kotlin" value="30748" />
+          <entry key="Kotlin" value="31507" />
           <entry key="PLAIN_TEXT" value="117" />
           <entry key="Properties" value="47" />
           <entry key="RegExp" value="1" />
@@ -180,13 +161,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernView.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+            <state relative-caret-position="700">
+              <caret line="192" column="21" selection-start-line="192" selection-start-column="21" selection-end-line="192" selection-end-column="21" />
               <folding>
-                <element signature="e#0#619#0" expanded="true" />
+                <element signature="e#0#694#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -195,20 +176,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/logs/TextViewLoggerAppender.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+            <state relative-caret-position="238">
+              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
               <folding>
-                <element signature="e#21#446#0" expanded="true" />
+                <element signature="e#21#503#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.11.1/23bef4ea0494ba9fb9835df0e3e23c6883d8d545/log4j-core-2.11.1-sources.jar!/org/apache/logging/log4j/core/appender/ConsoleAppender.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2446">
-              <caret line="137" column="31" selection-start-line="137" selection-start-column="24" selection-end-line="137" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -216,10 +188,50 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="46" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+            <state relative-caret-position="68">
+              <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/HighlightsLoader.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="118" selection-start-line="19" selection-start-column="118" selection-end-line="19" selection-end-column="118" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/css/smaliKeywords.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="22" column="12" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/controllers/EditorWindowViewController.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
+              <folding>
+                <element signature="e#28#364#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/views/ModernView.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="70" column="96" selection-start-line="70" selection-start-column="96" selection-end-line="70" selection-end-column="96" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -705,9 +717,7 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/views/EditorWindowView.kt" />
         <option value="$PROJECT_DIR$/src/main/resources/css/smaliKeywords.css" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/SmaliMethodsParser.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/HighlightsLoader.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/test.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/controllers/EditorWindowViewController.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/views/ExternalToolLoggerView.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/com/jh/SmaliParserTest.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/SmaliClass.kt" />
@@ -744,15 +754,17 @@
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/toolsWrappers/ApkToolWrapper.kt" />
-        <option value="$PROJECT_DIR$/src/main/resources/views/ModernView.fxml" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/controllers/MainViewController.kt" />
         <option value="$PROJECT_DIR$/src/main/resources/highlights/keywords.txt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/util/Utils.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/logs/TextViewLoggerAdapter.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/AppConfig.kt" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/logs/TextViewLoggerAppender.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernView.kt" />
+        <option value="$PROJECT_DIR$/src/main/resources/views/ModernView.fxml" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/logs/TextViewLoggerAppender.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/controllers/EditorWindowViewController.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/HighlightsLoader.kt" />
       </list>
     </option>
   </component>
@@ -853,16 +865,7 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="jh" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SmaliNavigator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smaliNavigator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="jh" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SmaliNavigator" type="b2602c69:ProjectViewProjectNode" />
@@ -870,6 +873,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SmaliNavigator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smaliNavigator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SmaliNavigator" type="b2602c69:ProjectViewProjectNode" />
@@ -975,7 +986,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/WandererN/IdeaProjects/smaliNavigator/src/main/kotlin/ConfigFormat.kt" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537662852222" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537709836498" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="junit.framework.TestCase" />
@@ -1261,19 +1272,11 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/SmaliParser.kt" />
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/com/jh/SmaliParserTest.kt" />
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/smaliStructs/SmaliMethod.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="34" column="27" lean-forward="true" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/HighlightsLoader.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1310,16 +1313,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="935">
           <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/controllers/EditorWindowViewController.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
-          <folding>
-            <element signature="e#28#364#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1487,14 +1480,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/views/ModernView.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="20" column="61" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/controllers/MainViewController.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -1556,13 +1541,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="46" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.11.1/23bef4ea0494ba9fb9835df0e3e23c6883d8d545/log4j-core-2.11.1-sources.jar!/org/apache/logging/log4j/core/appender/AbstractAppender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
@@ -1595,16 +1573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/logs/TextViewLoggerAppender.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-          <folding>
-            <element signature="e#21#446#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.11.1/23bef4ea0494ba9fb9835df0e3e23c6883d8d545/log4j-core-2.11.1-sources.jar!/org/apache/logging/log4j/core/appender/AbstractOutputStreamAppender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -1628,11 +1596,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernView.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+        <state relative-caret-position="700">
+          <caret line="192" column="21" selection-start-line="192" selection-start-column="21" selection-end-line="192" selection-end-column="21" />
           <folding>
-            <element signature="e#0#619#0" expanded="true" />
+            <element signature="e#0#694#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/views/ModernView.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="70" column="96" selection-start-line="70" selection-start-column="96" selection-end-line="70" selection-end-column="96" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/logs/TextViewLoggerAppender.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding>
+            <element signature="e#21#503#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/smaliKeywords.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="22" column="12" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/controllers/EditorWindowViewController.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
+          <folding>
+            <element signature="e#28#364#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/HighlightsLoader.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="118" selection-start-line="19" selection-start-column="118" selection-end-line="19" selection-end-column="118" />
         </state>
       </provider>
     </entry>

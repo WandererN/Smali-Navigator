@@ -17,6 +17,7 @@ import org.apache.logging.log4j.LogManager
 import tornadofx.*
 import tornadofx.FX.Companion.messages
 import java.io.File
+import kotlin.system.exitProcess
 
 class ModernView : View(messages["app_title"]) {
     private val folderImage = loadPicture("/icons/folder_icon.png")
@@ -189,6 +190,6 @@ class ModernView : View(messages["app_title"]) {
     }
 
     fun onExitMenuHandler() {
-        close()
+        exitProcess(0)
     }
 }

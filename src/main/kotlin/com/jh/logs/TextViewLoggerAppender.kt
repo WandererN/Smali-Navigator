@@ -8,16 +8,27 @@ import org.apache.logging.log4j.core.config.plugins.PluginAttribute
 import org.apache.logging.log4j.core.config.plugins.PluginElement
 import org.apache.logging.log4j.core.config.plugins.PluginFactory
 import java.io.Serializable
+import java.util.concurrent.locks.ReentrantReadWriteLock
+
 
 @Plugin(name = "TextViewLoggerAppender", category = Core.CATEGORY_NAME, elementType = Appender.ELEMENT_TYPE)
 class TextViewLoggerAppender(name: String, filter: Filter?, layout: Layout<out Serializable>?) : AbstractAppender(name, filter, layout) {
     override fun append(event: LogEvent?) {
-        loggingText.text += String(layout.toByteArray(event))
+        readLock.lock()
+        try {
+            loggingText.text += String(layout.toByteArray(event))
+            loggingText.positionCaret(loggingText.length)
+        }finally {
+            readLock.unlock()
+        }
     }
 
 
     companion object {
         lateinit var loggingText: TextArea
+        private val rwLock = ReentrantReadWriteLock()
+        private val readLock = rwLock.readLock()
+
         @PluginFactory
         @JvmStatic
         fun createAppender(
