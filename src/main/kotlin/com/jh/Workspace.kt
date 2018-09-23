@@ -2,8 +2,6 @@ package com.jh
 
 import com.jh.smaliStructs.SmaliClass
 import java.io.File
-import java.util.*
-import kotlin.collections.ArrayList
 
 object Workspace {
     var workingDir: File? = null

@@ -1,24 +1,26 @@
 package com.jh.util
 
-import com.jh.extToolLogger.ITextLogger
+import com.jh.SmaliAppLauncher
+import javafx.scene.image.Image
+import org.apache.logging.log4j.LogManager
 import java.util.*
 
-fun String.executeInShell(textLogger: ITextLogger?) {
-    val thread = Thread {
-        val proc = Runtime.getRuntime().exec("cmd /c $this")
-        var hasNext = true
-        val inStreamScanner = Scanner(proc.inputStream)
-        val errStreamScanner = Scanner(proc.errorStream)
-        while (hasNext) {
-            if (inStreamScanner.hasNext())
-                textLogger?.logLine(inStreamScanner.nextLine())
+fun String.executeInShell() {
+    val logger = LogManager.getLogger(this.javaClass.name)
+    val proc = Runtime.getRuntime().exec("cmd /c $this")
+    var hasNext = true
+    val inStreamScanner = Scanner(proc.inputStream)
+    val errStreamScanner = Scanner(proc.errorStream)
+    while (hasNext) {
+        if (inStreamScanner.hasNext())
+            logger.info(inStreamScanner.nextLine())
 
-            if (errStreamScanner.hasNext())
-                textLogger?.logLine(errStreamScanner.nextLine())
+        if (errStreamScanner.hasNext())
+            logger.error(errStreamScanner.nextLine())
 
-            hasNext = inStreamScanner.hasNext() || errStreamScanner.hasNext()
-        }
-        textLogger?.logLine("\nFinished with code ${proc.exitValue()}")
+        hasNext = inStreamScanner.hasNext() || errStreamScanner.hasNext()
     }
-    thread.start()
+    logger.error("Execute in shell thread finished!")
 }
+
+fun loadPicture(path: String) = Image(SmaliAppLauncher::class.java.getResourceAsStream(path))

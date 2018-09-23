@@ -1,6 +1,6 @@
 buildscript {
     ext.tornadofx_version = "1.7.17"
-    ext.kotlin_version = '1.2.61'
+    ext.kotlin_version = '1.2.70'
     ext.richtextfx_version = '0.9.1'
     repositories {
         jcenter()
@@ -22,16 +22,20 @@ version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 repositories {
     jcenter()
-    mavenCentral()
+//    mavenCentral()
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    compile 'com.googlecode.json-simple:json-simple:1.1.1'
-    compile "no.tornado:tornadofx:$tornadofx_version"
-    compile "org.fxmisc.richtext:richtextfx:$richtextfx_version"
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.26.1'
+//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-common:0.26.1"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    implementation "no.tornado:tornadofx:$tornadofx_version"
+    implementation "org.fxmisc.richtext:richtextfx:$richtextfx_version"
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.1'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.1'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
 }
 
 compileKotlin {
@@ -59,5 +63,10 @@ sourceSets {
             srcDirs = ["src/main/java", "src/main/resources"]
             includes = ["**/*.fxml", "**/*.xml", "**/*.properties","**/*.css","**/*.txt","**/*.png"]
         }
+    }
+}
+kotlin {
+    experimental {
+        coroutines "enable"
     }
 }

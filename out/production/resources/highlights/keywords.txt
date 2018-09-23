@@ -10,6 +10,9 @@
 .end
 .catch
 .catchall
+.param
+.local
+enum
 public
 private
 protected

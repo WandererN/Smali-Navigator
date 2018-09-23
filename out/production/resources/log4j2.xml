@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" packages="com.jh.logs">
+    <Appenders>
+        <TextViewLoggerAppender name="TextViewAppender">
+            <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss} [%t] %-5p - %msg%n"/>
+        </TextViewLoggerAppender>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss} [%t] %-5p - %msg%n"/>
+        </Console>
+        <RollingFile name="RollingFile" filename="log/SmaliNavigator.log"
+                     filepattern="${logPath}/%d{YYYYMMddHHmmss}-smali.log">
+            <PatternLayout pattern="%d{YYYY-MM-dd HH:mm:ss} [%t] %-5p - %msg%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="100 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFile"/>
+            <AppenderRef ref="TextViewAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>
