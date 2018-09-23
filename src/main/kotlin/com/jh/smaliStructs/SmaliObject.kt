@@ -9,6 +9,18 @@ open class SmaliObject {
     var isVolatile: Boolean = false
     var isSynchronized: Boolean = false
 
+    open fun makeInfoString(): String {
+        return """
+            Smali object:
+            name: $name
+            isFinal: $isFinal
+            isStatic: $isStatic
+            isAbstract: $isAbstract
+            isVolatile: $isVolatile
+            isSynchronized: $isSynchronized
+            accessModifier: ${accessModifier.name}"""
+    }
+
     protected open fun parseName(text: String) {
         name = text.split("(")[0].split(" ").last()
     }

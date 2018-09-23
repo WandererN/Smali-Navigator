@@ -20,7 +20,7 @@ fun String.executeInShell() {
 
         hasNext = inStreamScanner.hasNext() || errStreamScanner.hasNext()
     }
-    logger.error("Execute in shell thread finished!")
+    logger.info("Process finished with code ${proc.exitValue()}!")
 }
 
 fun loadPicture(path: String) = Image(SmaliAppLauncher::class.java.getResourceAsStream(path))

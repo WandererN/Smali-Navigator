@@ -13,7 +13,11 @@ class SmaliClassField : SmaliObject() {
     }
 
     fun parseConstValue(text: String) {
-        constValue = "" //probably not necessary
+        constValue = ""
+        val splitedStr = text.split("=")
+        if (splitedStr.size < 2)
+            return
+        constValue = splitedStr[1].replace(Regex("(^\\s*\"*)|\""),"")//FIXME fix inner quotes
     }
 
     companion object {

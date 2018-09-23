@@ -12,6 +12,19 @@ class SmaliClass : SmaliObject() {
     var interfacesNames = ArrayList<String>()
     var fields = ArrayList<SmaliClassField>()
     var methods = ArrayList<SmaliMethod>()
+    override fun makeInfoString(): String {
+        return """
+            SmaliClass:
+            ${super.makeInfoString()}
+            packageName: $packageName
+            isPackage: $isPackage
+            sourceName: $sourceName
+            parent: $parent
+            methods: ${methods.joinToString(";") {it.name}}
+            fields: ${fields.joinToString (";"){"${it.name}:${it.type}:${it.constValue}"}}
+            interfaces: ${interfacesNames.joinToString(";")}
+            """
+    }
     override fun parseName(text: String) {
         val parsedFullClassName = text
                 .split(" ")
@@ -33,6 +46,7 @@ class SmaliClass : SmaliObject() {
                 .last()
                 .replace(";", "")
                 .replaceFirst("L", "")
+                .replace("/",".")
     }
 
     fun parseSuperLine(line: String) {
@@ -60,12 +74,12 @@ class SmaliClass : SmaliObject() {
         parseModifiers(line)
     }
 
-    fun parsePackageName(projectRoot: File) {
+//    fun parsePackageName(projectRoot: File) {
 //        packageName = file.toRelativeString(projectRoot)
 //                .replace(File.separator, ".")
 //                .replaceFirst(Regex("\\w+\\."), "")
 //                .removeSuffix(".smali")//remove smali or smali_classes\\d
-    }
+//    }
 
     companion object {
         fun parse(text: List<String>, file: File, projectRoot: File): SmaliClass {
