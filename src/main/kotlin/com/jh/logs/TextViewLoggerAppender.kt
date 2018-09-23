@@ -1,5 +1,6 @@
 package com.jh.logs
 
+import javafx.application.Platform
 import javafx.scene.control.TextArea
 import org.apache.logging.log4j.core.*
 import org.apache.logging.log4j.core.appender.AbstractAppender
@@ -14,18 +15,20 @@ import java.util.concurrent.locks.ReentrantReadWriteLock
 @Plugin(name = "TextViewLoggerAppender", category = Core.CATEGORY_NAME, elementType = Appender.ELEMENT_TYPE)
 class TextViewLoggerAppender(name: String, filter: Filter?, layout: Layout<out Serializable>?) : AbstractAppender(name, filter, layout) {
     override fun append(event: LogEvent?) {
-        readLock.lock()
-        try {
-            loggingText.text += String(layout.toByteArray(event))
-            loggingText.positionCaret(loggingText.length)
-        }finally {
-            readLock.unlock()
+        val logMessage = String(layout.toByteArray(event))
+        Platform.runLater {
+            if (loggingTextArea.text.isEmpty()) {
+                loggingTextArea.text = logMessage
+            } else {
+                loggingTextArea.insertText(loggingTextArea.length, logMessage)
+            }
+            loggingTextArea.positionCaret(loggingTextArea.length)
         }
     }
 
 
     companion object {
-        lateinit var loggingText: TextArea
+        lateinit var loggingTextArea: TextArea
         private val rwLock = ReentrantReadWriteLock()
         private val readLock = rwLock.readLock()
 

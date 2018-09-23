@@ -75,9 +75,10 @@ class EditorWindowViewController(private val codeArea: CodeArea, var executor: E
             var styleClass: String? = null
             var matchGroupName: String? = null
             for (elem in highlightsToCSSClassesMap) {
-                matcher.group(elem.key)?.let {
+                if (matcher.group(elem.key) != null) {
                     styleClass = elem.value
                     matchGroupName = elem.key
+                    break
                 }
             }
             spansBuilder.add(Collections.emptyList(), matcher.start(matchGroupName) - lastKwPos)

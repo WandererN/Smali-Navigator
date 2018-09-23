@@ -12,6 +12,7 @@
 .catchall
 .param
 .local
+interface
 enum
 public
 private
