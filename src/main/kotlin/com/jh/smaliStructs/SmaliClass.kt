@@ -4,7 +4,7 @@ import java.io.File
 
 //TODO cover with tests
 class SmaliClass : SmaliObject() {
-    var sourceName: String =""
+    var sourceName: String = ""
     var isPackage = false
     var file: File? = null
     lateinit var packageName: String
@@ -20,11 +20,12 @@ class SmaliClass : SmaliObject() {
             isPackage: $isPackage
             sourceName: $sourceName
             parent: $parent
-            methods: ${methods.joinToString(";") {it.name}}
-            fields: ${fields.joinToString (";"){"${it.name}:${it.type}:${it.constValue}"}}
+            methods: ${methods.joinToString(";") { it.name }}
+            fields: ${fields.joinToString(";") { it.name }}
             interfaces: ${interfacesNames.joinToString(";")}
             """
     }
+
     override fun parseName(text: String) {
         val parsedFullClassName = text
                 .split(" ")
@@ -46,7 +47,7 @@ class SmaliClass : SmaliObject() {
                 .last()
                 .replace(";", "")
                 .replaceFirst("L", "")
-                .replace("/",".")
+                .replace("/", ".")
     }
 
     fun parseSuperLine(line: String) {
@@ -74,18 +75,10 @@ class SmaliClass : SmaliObject() {
         parseModifiers(line)
     }
 
-//    fun parsePackageName(projectRoot: File) {
-//        packageName = file.toRelativeString(projectRoot)
-//                .replace(File.separator, ".")
-//                .replaceFirst(Regex("\\w+\\."), "")
-//                .removeSuffix(".smali")//remove smali or smali_classes\\d
-//    }
-
     companion object {
-        fun parse(text: List<String>, file: File, projectRoot: File): SmaliClass {
+        fun parse(text: List<String>, file: File): SmaliClass {
             val res = SmaliClass()
             res.file = file
-           // res.parsePackageName(projectRoot)
             with(res)
             {
                 for ((lineNumber, line) in text.withIndex())

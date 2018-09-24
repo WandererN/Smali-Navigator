@@ -17,7 +17,7 @@ class SmaliClassField : SmaliObject() {
         val splitedStr = text.split("=")
         if (splitedStr.size < 2)
             return
-        constValue = splitedStr[1].replace(Regex("(^\\s*\"*)|\""),"")//FIXME fix inner quotes
+        constValue = splitedStr[1].replace(Regex("(^\\s*\"*)|\""), "")//FIXME fix inner quotes
     }
 
     companion object {
