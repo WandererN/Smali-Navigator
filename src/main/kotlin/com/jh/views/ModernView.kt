@@ -3,8 +3,11 @@ import com.jh.Workspace
 import com.jh.logs.TextViewLoggerAppender
 import com.jh.smaliStructs.SmaliClass
 import com.jh.toolsWrappers.ApkToolWrapper
+import com.jh.util.findSmaliFilesWithTextInDir
 import com.jh.util.loadPicture
+import com.jh.views.SearchResultsView
 import com.jh.views.TabEditorView
+import com.jh.views.SearchTableDataClass
 import javafx.application.Platform
 import javafx.scene.control.*
 import javafx.scene.image.ImageView
@@ -66,7 +69,7 @@ class ModernView : View(messages["app_title"]) {
                 fillTreeView(item, it)
             filesList.add(item)
             if (it.isFile && it.extension == "smali") {
-                Workspace.loadedClasses.add(SmaliClass.parse(it.readLines(), it, Workspace.workingDir!!))
+                Workspace.loadedClasses.add(SmaliClass.parse(it.readLines(), it))
             }
         }
         root.children.addAll(filesList)
@@ -104,9 +107,9 @@ class ModernView : View(messages["app_title"]) {
     fun closeProject() {
         Workspace.loadedClasses.clear()
         Workspace.workingDir = null
-        tabPane.tabs.removeAll()
-        filesTreeView.root?.children?.removeAll()
-        packageTreeView.root?.children?.removeAll()
+        tabPane.tabs.clear()
+        filesTreeView.root?.children?.clear()
+        packageTreeView.root?.children?.clear()
         filesTreeView.root = null
         packageTreeView.root = null
         packageTreeView.refresh()
@@ -213,6 +216,34 @@ class ModernView : View(messages["app_title"]) {
     }
 
     fun findInProject() {
+        logger.info("findInProject")
+        val searchResultsView = SearchResultsView()
+        val textDialog = TextInputDialog()
+        textDialog.title = "Enter text to search"
+        val dialogResult = textDialog.showAndWait()
+        dialogResult?.ifPresent()
+        { text ->
+            val job =GlobalScope.launch {
+                if (Workspace.workingDir != null) {
+                    logger.info("About to find $text in smali files")
+                    val res = findSmaliFilesWithTextInDir(Workspace.workingDir!!, text)
+                    logger.info("Search finished!")
+                    for (file in res.keys) {
+                        val positions = res[file]
+                        positions?.forEach {
+                            searchResultsView.addLineToResultTable(SearchTableDataClass(file, it))
+                            logger.info("${file.canonicalPath} line $it")
+                        }
+                    }
+
+                }
+            }
+            job.invokeOnCompletion {
+                Platform.runLater {
+                    searchResultsView.openModal()
+                }
+            }
+        }
 
     }
 

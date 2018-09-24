@@ -16,7 +16,7 @@ object Workspace {
                 walkFiles(file)
             else {
                 workingDir?.let {
-                    loadedClasses.add(SmaliClass.parse(file.readLines(), file, it))
+                    loadedClasses.add(SmaliClass.parse(file.readLines(), file))
                 }
             }
         }
