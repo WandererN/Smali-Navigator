@@ -9,8 +9,6 @@ import org.apache.logging.log4j.core.config.plugins.PluginAttribute
 import org.apache.logging.log4j.core.config.plugins.PluginElement
 import org.apache.logging.log4j.core.config.plugins.PluginFactory
 import java.io.Serializable
-import java.util.concurrent.locks.ReentrantReadWriteLock
-
 
 @Plugin(name = "TextViewLoggerAppender", category = Core.CATEGORY_NAME, elementType = Appender.ELEMENT_TYPE)
 class TextViewLoggerAppender(name: String, filter: Filter?, layout: Layout<out Serializable>?) : AbstractAppender(name, filter, layout) {
@@ -29,16 +27,12 @@ class TextViewLoggerAppender(name: String, filter: Filter?, layout: Layout<out S
 
     companion object {
         lateinit var loggingTextArea: TextArea
-        private val rwLock = ReentrantReadWriteLock()
-        private val readLock = rwLock.readLock()
-
         @PluginFactory
         @JvmStatic
         fun createAppender(
                 @PluginAttribute("name") name: String?,
                 @PluginElement("PatternLayout") layout: Layout<out Serializable>?,
-                @PluginElement("Filter") filter: Filter?,
-                @PluginAttribute("otherAttribute") otherAttribute: String?
+                @PluginElement("Filter") filter: Filter?
         ): TextViewLoggerAppender? {
             if (name == null) {
                 LOGGER.error("No name provided for TextViewLoggerAppender")
