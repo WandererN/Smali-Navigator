@@ -17,7 +17,7 @@ object HighlightsLoader {
     fun generateLabelsString() =  generateGroupPatternString("LABEL", listOf("\\:[^\\s]*"),startWith = "(\\s+|^)")
     fun generateLineNamString() = generateGroupPatternString("LINENUMBER", listOf(".line[^\n]*"))
     fun generateStringString() = generateGroupPatternString("STRING", listOf("\".*\""))
-    fun generateClassAndTypesString() = generateGroupPatternString("CLASSORTYPE", listOf("L[^;]*"),startWith = "(\\s+|\\(|:)")
+    fun generateClassAndTypesString() = generateGroupPatternString("CLASSORTYPE", listOf("L[^;]*"),startWith = "(\\s+|\\(|:|;)")
     fun generateRegistersString() = generateGroupPatternString("REGISTER", listOf("(v|p)\\d"))
     fun generateOpcodesString() = generateGroupPatternString("OPCODE",
             loadFromResource("/highlights/opcodes.txt"), endWith = "(\\s+|$)")
