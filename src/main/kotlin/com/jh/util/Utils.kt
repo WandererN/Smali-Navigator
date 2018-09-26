@@ -1,6 +1,9 @@
 package com.jh.util
 
 import com.jh.SmaliAppLauncher
+import com.jh.Workspace
+import com.jh.smaliStructs.SmaliClass
+import com.jh.views.SearchTableDataClass
 import javafx.scene.image.Image
 import kotlinx.coroutines.experimental.GlobalScope
 import kotlinx.coroutines.experimental.async
@@ -31,8 +34,21 @@ suspend fun String.executeInShell() {
     logger.info("Process finished with code ${proc.exitValue()}!")
 }
 
+fun findStringInText(text: String, string: String): ArrayList<Int> {
+    val p = Pattern.compile("""($string)""") ?: return ArrayList()
+    val res = ArrayList<Int>()
+    val matcher = p.matcher(text)
+    while (matcher.find()) {
+        matcher.group()?.let {
+            val pos = matcher.start()
+            val line = text.substring(0, pos).count { char -> return@count char == '\n' } + 1
+            res.add(line)
+        }
+    }
+    return res
+}
+
 suspend fun findSmaliFilesWithTextInDir(dir: File, text: String): Map<out File, ArrayList<Int>> {
-    val p = Pattern.compile("""($text)""") ?: return HashMap()
     val res = HashMap<File, ArrayList<Int>>()
     val files = dir.listFiles() ?: return res
     for (file in files) {
@@ -40,23 +56,25 @@ suspend fun findSmaliFilesWithTextInDir(dir: File, text: String): Map<out File, 
             file.isDirectory -> res.putAll(findSmaliFilesWithTextInDir(file, text))
             file.extension == "smali" -> {
                 val sourceText = file.readText()
-                val matcher = p.matcher(sourceText)
-                while (matcher.find()) {
-                    matcher.group()?.let {
-                        val pos = matcher.start()
-                        val line = sourceText.substring(0, pos).count { char -> return@count char == '\n' } + 1
-                        if (res.containsKey(file)) {
-                            res[file]?.add(line)
-                        } else {
-                            res[file] = arrayListOf(line)
-                        }
-                    }
-                }
+                val searchResult = findStringInText(sourceText, text)
+                if (searchResult.isNotEmpty())
+                    res[file] = searchResult
             }
         }
     }
     return res
 }
 
+suspend fun findSmaliClasssesWithTextInProject(text: String): Map<out SmaliClass, ArrayList<Int>> {
+    val res = HashMap<SmaliClass, ArrayList<Int>>()
+    for (clazz in Workspace.loadedClasses) {
+        val sourceText = clazz.file?.readText() ?: continue
+        val searchResult = findStringInText(sourceText, text)
+        if (searchResult.isNotEmpty()) {
+            res[clazz] = searchResult
+        }
+    }
+    return res
+}
 
 fun loadPicture(path: String) = Image(SmaliAppLauncher::class.java.getResourceAsStream(path))

@@ -19,13 +19,14 @@ class TabEditorView(var currentFile: File) : Tab(currentFile.name) {
     var methodsNamesListView = ListView<SmaliMethod>()
     private val methodImage = Image(SmaliAppLauncher::class.java.getResourceAsStream("/icons/method_icon.png"))
     private val constructorImage = Image(SmaliAppLauncher::class.java.getResourceAsStream("/icons/constructor_icon.png"))
-    private val methodsPopupMenu = contextmenu{
+    private val methodsPopupMenu = contextmenu {
         item("Goto declaration")
         item("Find usages")
         item("Rename")
     }
+
     init {
-        val clazz = com.jh.Workspace.loadedClasses.find { smaliClass -> smaliClass.file==currentFile }
+        val clazz = com.jh.Workspace.loadedClasses.find { smaliClass -> smaliClass.file == currentFile }
         clazz?.let {
             smaliClass = it
         }
@@ -45,9 +46,7 @@ class TabEditorView(var currentFile: File) : Tab(currentFile.name) {
         methodsNamesListView.setOnMouseClicked {
             if (it.clickCount == 2) {
                 val selectedMethod = methodsNamesListView.selectionModel.selectedItem ?: return@setOnMouseClicked
-                editorWindowView.moveTo(editorWindowView.position(selectedMethod.declarationLine, 0).toOffset())
-                editorWindowView.requestFollowCaret() //TODO more correct jump. (jump to line and scroll +-some lines)
-                editorWindowView.requestFocus()
+                jumpToLine(selectedMethod.declarationLine)
             }
         }
         methodsNamesListView.contextMenu = methodsPopupMenu
@@ -55,5 +54,12 @@ class TabEditorView(var currentFile: File) : Tab(currentFile.name) {
         splitPane.add(methodsNamesListView)
         splitPane.setDividerPositions(0.8)
         add(splitPane)
+    }
+
+    fun jumpToLine(line: Int) {
+        editorWindowView.moveTo(editorWindowView.position(line, 0).toOffset())
+        editorWindowView.requestFollowCaret() //TODO more correct jump. (jump to line and scroll +-some lines)
+        editorWindowView.requestFocus()
+
     }
 }

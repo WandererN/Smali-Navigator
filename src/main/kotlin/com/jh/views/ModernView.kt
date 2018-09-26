@@ -3,11 +3,11 @@ import com.jh.Workspace
 import com.jh.logs.TextViewLoggerAppender
 import com.jh.smaliStructs.SmaliClass
 import com.jh.toolsWrappers.ApkToolWrapper
-import com.jh.util.findSmaliFilesWithTextInDir
+import com.jh.util.findSmaliClasssesWithTextInProject
 import com.jh.util.loadPicture
 import com.jh.views.SearchResultsView
-import com.jh.views.TabEditorView
 import com.jh.views.SearchTableDataClass
+import com.jh.views.TabEditorView
 import javafx.application.Platform
 import javafx.scene.control.*
 import javafx.scene.image.ImageView
@@ -82,7 +82,7 @@ class ModernView : View(messages["app_title"]) {
         }
     }
 
-    private fun openFileOrFocusTab(file: File) {
+    fun openFileOrFocusTab(file: File, line: Int = 0) {
         var newTab = tabPane.tabs.find { element ->
             return@find when (element) {
                 is TabEditorView -> {
@@ -97,6 +97,7 @@ class ModernView : View(messages["app_title"]) {
             val tb = TabEditorView(file)
             logger.info(tb.smaliClass.makeInfoString())
             tb.editorWindowView.replaceText(lines.joinToString("\n"))
+            tb.jumpToLine(line)
             tb.methodsNamesListView.items.addAll(tb.smaliClass.methods)
             tabPane.tabs.add(tb)
             newTab = tb
@@ -217,22 +218,22 @@ class ModernView : View(messages["app_title"]) {
 
     fun findInProject() {
         logger.info("findInProject")
-        val searchResultsView = SearchResultsView()
+        val searchResultsView = SearchResultsView(this)
         val textDialog = TextInputDialog()
         textDialog.title = "Enter text to search"
         val dialogResult = textDialog.showAndWait()
         dialogResult?.ifPresent()
         { text ->
-            val job =GlobalScope.launch {
+            val job = GlobalScope.launch {
                 if (Workspace.workingDir != null) {
                     logger.info("About to find $text in smali files")
-                    val res = findSmaliFilesWithTextInDir(Workspace.workingDir!!, text)
+                    val res = findSmaliClasssesWithTextInProject(text)
                     logger.info("Search finished!")
-                    for (file in res.keys) {
-                        val positions = res[file]
+                    for (smaliClass in res.keys) {
+                        val positions = res[smaliClass]
                         positions?.forEach {
-                            searchResultsView.addLineToResultTable(SearchTableDataClass(file, it))
-                            logger.info("${file.canonicalPath} line $it")
+                            searchResultsView.addLineToResultTable(SearchTableDataClass(smaliClass, it))
+                            logger.info("class ${smaliClass.name} in package ${smaliClass.packageName} line $it")
                         }
                     }
 
@@ -240,7 +241,7 @@ class ModernView : View(messages["app_title"]) {
             }
             job.invokeOnCompletion {
                 Platform.runLater {
-                    searchResultsView.openModal()
+                    searchResultsView.openWindow()
                 }
             }
         }

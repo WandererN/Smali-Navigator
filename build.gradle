@@ -22,13 +22,11 @@ version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 repositories {
     jcenter()
-//    mavenCentral()
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:0.26.1'
-//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-common:0.26.1"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
     implementation "no.tornado:tornadofx:$tornadofx_version"
@@ -61,7 +59,7 @@ sourceSets {
     main {
         resources {
             srcDirs = ["src/main/java", "src/main/resources"]
-            includes = ["**/*.fxml", "**/*.xml", "**/*.properties","**/*.css","**/*.txt","**/*.png"]
+            includes = ["**/*.fxml", "**/*.xml", "**/*.properties", "**/*.css", "**/*.txt", "**/*.png"]
         }
     }
 }
