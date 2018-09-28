@@ -1,9 +1,17 @@
-package views
+package com.jh.views
 
-import javafx.scene.control.DialogPane
 import javafx.scene.layout.BorderPane
+import javafx.stage.StageStyle
 import tornadofx.*
 
-class SearchDialog : View("My View") {
-    override val root: DialogPane by fxml("/views/SearchDialog.fxml")
+class SearchDialog : View("Find...") {
+    override val root: BorderPane by fxml("/views/SearchDialog.fxml")
+
+    init {
+    }
+
+    override fun onBeforeShow() {
+        super.onBeforeShow()
+        currentStage?.initStyle(StageStyle.UTILITY)
+    }
 }

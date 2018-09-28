@@ -1,6 +1,7 @@
 package com.jh
+
+import com.jh.views.ModernView
 import tornadofx.*
-import ModernView
 import java.io.File
 
 class SmaliAppLauncher : App(ModernView::class) {

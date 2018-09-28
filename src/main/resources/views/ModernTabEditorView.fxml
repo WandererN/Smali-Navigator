@@ -1,10 +1,36 @@
-<?import org.fxmisc.flowless.VirtualizedScrollPane?>
-<?import javafx.scene.layout.VBox?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <?import com.jh.views.EditorWindowView?>
-<VBox xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1">
-    <VirtualizedScrollPane vbarPolicy="AS_NEEDED" hbarPolicy="AS_NEEDED">
-        <content>
-            <EditorWindowView fx:id="codeArea" prefHeight="331.0" prefWidth="266.0"/>
-        </content>
-    </VirtualizedScrollPane>
-</VBox>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import org.fxmisc.flowless.VirtualizedScrollPane?>
+
+<SplitPane dividerPositions="0.5" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+        <VirtualizedScrollPane hbarPolicy="AS_NEEDED" prefHeight="331.0" prefWidth="266.0" vbarPolicy="AS_NEEDED" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <content>
+                <EditorWindowView fx:id="code_area" prefHeight="331.0" prefWidth="266.0" />
+            </content>
+        </VirtualizedScrollPane>
+    </AnchorPane>
+    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+        <Accordion prefHeight="200.0" prefWidth="202.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <panes>
+                <TitledPane animated="false" text="Methods">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <ListView fx:id="methods_list" prefHeight="124.0" prefWidth="198.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                    </AnchorPane>
+                </TitledPane>
+                <TitledPane animated="false" text="Fields">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                </TitledPane>
+                <TitledPane animated="false" text="Interfaces">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                </TitledPane>
+            </panes>
+        </Accordion>
+    </AnchorPane>
+</SplitPane>

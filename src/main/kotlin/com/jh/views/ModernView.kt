@@ -1,3 +1,5 @@
+package com.jh.views
+
 import com.jh.AppConfig
 import com.jh.Workspace
 import com.jh.logs.TextViewLoggerAppender
@@ -5,9 +7,6 @@ import com.jh.smaliStructs.SmaliClass
 import com.jh.toolsWrappers.ApkToolWrapper
 import com.jh.util.findSmaliClasssesWithTextInProject
 import com.jh.util.loadPicture
-import com.jh.views.SearchResultsView
-import com.jh.views.SearchTableDataClass
-import com.jh.views.TabEditorView
 import javafx.application.Platform
 import javafx.scene.control.*
 import javafx.scene.image.ImageView
@@ -85,8 +84,8 @@ class ModernView : View(messages["app_title"]) {
     fun openFileOrFocusTab(file: File, line: Int = 0) {
         var newTab = tabPane.tabs.find { element ->
             return@find when (element) {
-                is TabEditorView -> {
-                    element.currentFile == file
+                is FileTabView -> {
+                    element.file == file
                 }
                 else -> false
             }
@@ -94,11 +93,14 @@ class ModernView : View(messages["app_title"]) {
 
         if (newTab == null) {
             val lines = file.readLines()
-            val tb = TabEditorView(file)
-            logger.info(tb.smaliClass.makeInfoString())
-            tb.editorWindowView.replaceText(lines.joinToString("\n"))
-            tb.jumpToLine(line)
-            tb.methodsNamesListView.items.addAll(tb.smaliClass.methods)
+            val tb = FileTabView(file)
+            with(tb.content)
+            {
+                logger.info(smaliClass.makeInfoString())
+                editorWindowView.replaceText(lines.joinToString("\n"))
+                jumpToLine(line)
+                methodsNamesListView.items.addAll(smaliClass.methods)
+            }
             tabPane.tabs.add(tb)
             newTab = tb
         }

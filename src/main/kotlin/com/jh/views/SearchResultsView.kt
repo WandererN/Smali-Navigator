@@ -1,6 +1,5 @@
 package com.jh.views
 
-import ModernView
 import com.jh.smaliStructs.SmaliClass
 import javafx.scene.control.Button
 import javafx.scene.control.SelectionMode
@@ -8,6 +7,7 @@ import javafx.scene.control.TableColumn
 import javafx.scene.control.TableView
 import javafx.scene.control.cell.PropertyValueFactory
 import javafx.scene.layout.BorderPane
+import javafx.stage.StageStyle
 import tornadofx.*
 
 
@@ -32,6 +32,11 @@ class SearchResultsView(private val parentView: ModernView) : View("Search resul
         resultsTable.setOnMouseClicked { if (it.clickCount == 2) gotoSearchResult() }
         gotoButton.setOnMouseClicked { gotoSearchResult() }
         cancelButton.setOnMouseClicked { close() }
+    }
+
+    override fun onBeforeShow() {
+        super.onBeforeShow()
+        currentStage?.initStyle(StageStyle.UTILITY)
     }
 
     private fun gotoSearchResult() {
