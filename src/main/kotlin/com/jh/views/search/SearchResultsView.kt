@@ -1,6 +1,8 @@
-package com.jh.views
+package com.jh.views.search
 
 import com.jh.smaliStructs.SmaliClass
+import com.jh.views.ModernView
+import javafx.application.Platform
 import javafx.scene.control.Button
 import javafx.scene.control.SelectionMode
 import javafx.scene.control.TableColumn
@@ -41,7 +43,9 @@ class SearchResultsView(private val parentView: ModernView) : View("Search resul
 
     private fun gotoSearchResult() {
         val (smaliClass, line) = resultsTable.selectionModel.selectedItem ?: return
-        smaliClass.file?.let { parentView.openFileOrFocusTab(it, line) }
+        smaliClass.file?.let {
+            parentView.primaryStage.toFront()
+            parentView.openFileOrFocusTab(it, line) }
     }
 
     fun addLineToResultTable(searchTableDataClass: SearchTableDataClass) {

@@ -1,4 +1,4 @@
-package com.jh.views
+package com.jh.views.search
 
 import com.jh.smaliStructs.SmaliClass
 
