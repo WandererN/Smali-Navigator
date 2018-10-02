@@ -3,12 +3,15 @@ package com.jh.util
 import com.jh.SmaliAppLauncher
 import com.jh.Workspace
 import com.jh.smaliStructs.SmaliClass
-import com.jh.views.SearchTableDataClass
+import com.jh.views.ModernView
+import com.jh.views.search.SearchResultsView
+import com.jh.views.search.SearchTableDataClass
+import javafx.application.Platform
 import javafx.scene.image.Image
 import kotlinx.coroutines.experimental.GlobalScope
-import kotlinx.coroutines.experimental.async
 import kotlinx.coroutines.experimental.launch
 import org.apache.logging.log4j.LogManager
+import tornadofx.*
 import java.io.File
 import java.util.*
 import java.util.regex.Pattern
@@ -35,13 +38,13 @@ suspend fun String.executeInShell() {
 }
 
 fun findStringInText(text: String, string: String): ArrayList<Int> {
-    val p = Pattern.compile("""($string)""") ?: return ArrayList()
+    val p = Pattern.compile("""(${Regex.escape(string)})""") ?: return ArrayList()
     val res = ArrayList<Int>()
     val matcher = p.matcher(text)
     while (matcher.find()) {
         matcher.group()?.let {
             val pos = matcher.start()
-            val line = text.substring(0, pos).count { char -> return@count char == '\n' } + 1
+            val line = text.substring(0, pos).count { char -> return@count char == '\n' }
             res.add(line)
         }
     }
@@ -77,4 +80,28 @@ suspend fun findSmaliClasssesWithTextInProject(text: String): Map<out SmaliClass
     return res
 }
 
+fun findTextAndShowDialog(text: String) {
+    val searchResultsView = SearchResultsView(Workspace.mainView)
+    val job = GlobalScope.launch {
+        if (Workspace.workingDir != null) {
+            logger.info("About to find $text in smali files")
+            val res = findSmaliClasssesWithTextInProject(text)
+            logger.info("Search finished!")
+            for (smaliClass in res.keys) {
+                val positions = res[smaliClass]
+                positions?.forEach {
+                    searchResultsView.addLineToResultTable(SearchTableDataClass(smaliClass, it))
+                    logger.info("class ${smaliClass.name} in package ${smaliClass.packageName} line $it")
+                }
+            }
+        }
+    }
+    job.invokeOnCompletion {
+        Platform.runLater {
+            searchResultsView.openWindow()
+        }
+    }
+}
+
 fun loadPicture(path: String) = Image(SmaliAppLauncher::class.java.getResourceAsStream(path))
+fun loadCss(path: String) = SmaliAppLauncher::class.java.getResource(path).toExternalForm()

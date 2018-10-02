@@ -1,11 +1,14 @@
 package com.jh
 
 import com.jh.smaliStructs.SmaliClass
+import com.jh.views.ModernView
 import java.io.File
 
 object Workspace {
     var workingDir: File? = null
     val loadedClasses = ArrayList<SmaliClass>()
+    lateinit var mainView: ModernView
+
     private fun walkFiles(root: File) {
         val filesInDir = root.listFiles { f ->
             return@listFiles (f.isDirectory || f.extension == "smali")
