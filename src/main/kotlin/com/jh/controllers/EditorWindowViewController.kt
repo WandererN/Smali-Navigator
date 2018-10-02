@@ -11,6 +11,7 @@ import java.util.*
 import java.util.concurrent.Executor
 import java.util.regex.Pattern
 
+//TODO Rewrite with coroutines
 class EditorWindowViewController(private val codeArea: CodeArea, var executor: Executor) {
     lateinit var highlightsPattern: Pattern
     private var cleanupWhenNoLongerNeedIt: Subscription
