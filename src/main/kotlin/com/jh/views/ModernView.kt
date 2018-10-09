@@ -85,6 +85,10 @@ class ModernView : View(messages["app_title"]) {
         }
     }
 
+    fun jumpToLine(line: Int) {
+        (tabPane.tabs[tabPane.selectionModel.selectedIndex] as FileTabView).content.jumpToLine(line)
+    }
+
     fun openFileOrFocusTab(file: File, line: Int = 0) {
         var newTab = tabPane.tabs.find { element ->
             return@find when (element) {
@@ -103,6 +107,8 @@ class ModernView : View(messages["app_title"]) {
                 logger.info(smaliClass.makeInfoString())
                 editorWindowView.replaceText(lines.joinToString("\n"))
                 methodsNamesListView.items.addAll(smaliClass.methods)
+                fieldsNamesListView.items.addAll(smaliClass.fields)
+                interfacesNamesListView.items.addAll(smaliClass.interfacesNames)
             }
             tabPane.tabs.add(tb)
             newTab = tb
