@@ -104,4 +104,4 @@ fun findTextAndShowDialog(text: String) {
 }
 
 fun loadPicture(path: String) = Image(SmaliAppLauncher::class.java.getResourceAsStream(path))
-fun loadCss(path: String) = SmaliAppLauncher::class.java.getResource(path).toExternalForm()
+fun loadCss(path: String): String = SmaliAppLauncher::class.java.getResource(path).toExternalForm()

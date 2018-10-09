@@ -6,7 +6,7 @@ import tornadofx.*
 import tornadofx.FX.Companion.messages
 
 object AppConfig {
-    const val PROJECT_ROOT = "debugRoot"
+    const val PROJECT_ROOT = "."
     val CONST_APP_TITLE = messages["app_title"]
     var apkToolPath: String = "$PROJECT_ROOT/apktool.jar"
 

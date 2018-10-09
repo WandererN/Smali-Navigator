@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b06eb7d-b209-4b03-810e-8c98c6bf6876" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/editor/AdvancedLineNumberFactory.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/Workspace.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/Workspace.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/controllers/EditorWindowViewController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/controllers/EditorWindowViewController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/AppConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/AppConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/util/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/util/Utils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/views/EditorWindowView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/views/EditorWindowView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernTabEditorView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernTabEditorView.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/views/SearchDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/views/search/SearchDialog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/views/SearchResultsView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/views/search/SearchResultsView.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/jh/views/SearchTableDataClass.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/jh/views/search/SearchTableDataClass.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jh/views/SearchResultsView.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jh/views/search/SearchResultsView.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/views/ModernTabEditorView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/ModernTabEditorView.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -95,7 +88,7 @@
     <session id="427138611">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="21" />
+          <entry key="project.closed" value="22" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="2" />
@@ -105,8 +98,8 @@
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="9" />
-          <entry key="project.open.time.9" value="6" />
-          <entry key="project.opened" value="24" />
+          <entry key="project.open.time.9" value="7" />
+          <entry key="project.opened" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -114,10 +107,10 @@
           <entry key="configurationFile" value="1" />
           <entry key="cs" value="1" />
           <entry key="css" value="2" />
-          <entry key="fxml" value="27" />
+          <entry key="fxml" value="30" />
           <entry key="gradle" value="14" />
           <entry key="java" value="57" />
-          <entry key="kt" value="189" />
+          <entry key="kt" value="190" />
           <entry key="png" value="3" />
           <entry key="properties" value="14" />
           <entry key="txt" value="16" />
@@ -130,20 +123,20 @@
           <entry key="Groovy" value="14" />
           <entry key="Image" value="3" />
           <entry key="JAVA" value="57" />
-          <entry key="Kotlin" value="189" />
+          <entry key="Kotlin" value="190" />
           <entry key="PLAIN_TEXT" value="16" />
           <entry key="Properties" value="14" />
-          <entry key="XML" value="28" />
+          <entry key="XML" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cs" value="1" />
           <entry key="css" value="451" />
-          <entry key="fxml" value="1077" />
+          <entry key="fxml" value="1078" />
           <entry key="gradle" value="745" />
           <entry key="java" value="57" />
-          <entry key="kt" value="39733" />
+          <entry key="kt" value="40800" />
           <entry key="properties" value="56" />
           <entry key="txt" value="118" />
           <entry key="xml" value="189" />
@@ -155,11 +148,11 @@
           <entry key="CSS" value="451" />
           <entry key="Groovy" value="745" />
           <entry key="JAVA" value="57" />
-          <entry key="Kotlin" value="39732" />
+          <entry key="Kotlin" value="40799" />
           <entry key="PLAIN_TEXT" value="118" />
           <entry key="Properties" value="56" />
           <entry key="RegExp" value="1" />
-          <entry key="XML" value="1266" />
+          <entry key="XML" value="1267" />
         </counts>
       </usages-collector>
     </session>
@@ -169,8 +162,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernView.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+            <state relative-caret-position="289">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/views/ModernTabEditorView.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="35" column="56" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/views/ModernView.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-119">
+              <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -178,35 +191,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/Workspace.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+            <state relative-caret-position="85">
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/SmaliAppLauncher.kt">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/AppConfig.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/no.tornado/tornadofx/1.7.17/59e5067bee2d7c0fb626771edcaf2337afc92586/tornadofx-1.7.17-sources.jar!/tornadofx/App.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/util/Utils.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="84" column="34" lean-forward="true" selection-start-line="84" selection-start-column="34" selection-end-line="84" selection-end-column="34" />
+            <state relative-caret-position="238">
+              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -214,8 +209,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/views/search/SearchResultsView.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="47" column="27" lean-forward="true" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+            <state relative-caret-position="629">
+              <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -223,19 +218,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/views/FileTabView.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="18" />
+            <state relative-caret-position="204">
+              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+              <folding>
+                <element signature="e#22#92#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernTabEditorView.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+            <state relative-caret-position="272">
+              <caret line="57" column="48" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
               <folding>
-                <element signature="e#22#303#0" expanded="true" />
+                <element signature="e#22#370#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -766,7 +764,6 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/logs/TextViewLoggerAppender.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/smaliStructs/SmaliClass.kt" />
         <option value="$PROJECT_DIR$/src/main/resources/ModernView.properties" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/AppConfig.kt" />
         <option value="$PROJECT_DIR$/src/main/resources/com/jh/views/SearchResultsView.fxml" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/HighlightsLoader.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/toolsWrappers/ApkToolWrapper.kt" />
@@ -782,15 +779,16 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/views/TabEditorView.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/views/FileTabView.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/controllers/EditorWindowViewController.kt" />
-        <option value="$PROJECT_DIR$/src/main/resources/views/ModernTabEditorView.fxml" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/views/search/SearchTableDataClass.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/views/EditorWindowView.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/editor/AdvancedLineNumberFactory.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/views/search/SearchResultsView.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/smaliStructs/SmaliMethod.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernView.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/Workspace.kt" />
+        <option value="$PROJECT_DIR$/src/main/resources/views/ModernTabEditorView.fxml" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/util/Utils.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/AppConfig.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernView.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernTabEditorView.kt" />
       </list>
     </option>
@@ -807,35 +805,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SmaliNavigator" type="58d84e3e:PackageViewProjectNode" />
-              <item name="SmaliNavigator" type="eaaa3913:PackageViewModuleGroupNode" />
-            </path>
-            <path>
-              <item name="SmaliNavigator" type="58d84e3e:PackageViewProjectNode" />
-              <item name="SmaliNavigator" type="eaaa3913:PackageViewModuleGroupNode" />
-              <item name="SmaliNavigator_main" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="SmaliNavigator" type="58d84e3e:PackageViewProjectNode" />
-              <item name="SmaliNavigator" type="eaaa3913:PackageViewModuleGroupNode" />
-              <item name="SmaliNavigator_main" type="616d4139:PackageViewModuleNode" />
-              <item name="com.jh" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="SmaliNavigator" type="58d84e3e:PackageViewProjectNode" />
-              <item name="SmaliNavigator" type="eaaa3913:PackageViewModuleGroupNode" />
-              <item name="SmaliNavigator_main" type="616d4139:PackageViewModuleNode" />
-              <item name="com.jh" type="1f31426a:PackageElementNode" />
-              <item name="views" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -877,6 +846,35 @@
               <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="jh" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SmaliNavigator" type="58d84e3e:PackageViewProjectNode" />
+              <item name="SmaliNavigator" type="eaaa3913:PackageViewModuleGroupNode" />
+            </path>
+            <path>
+              <item name="SmaliNavigator" type="58d84e3e:PackageViewProjectNode" />
+              <item name="SmaliNavigator" type="eaaa3913:PackageViewModuleGroupNode" />
+              <item name="SmaliNavigator_main" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="SmaliNavigator" type="58d84e3e:PackageViewProjectNode" />
+              <item name="SmaliNavigator" type="eaaa3913:PackageViewModuleGroupNode" />
+              <item name="SmaliNavigator_main" type="616d4139:PackageViewModuleNode" />
+              <item name="com.jh" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="SmaliNavigator" type="58d84e3e:PackageViewProjectNode" />
+              <item name="SmaliNavigator" type="eaaa3913:PackageViewModuleGroupNode" />
+              <item name="SmaliNavigator_main" type="616d4139:PackageViewModuleNode" />
+              <item name="com.jh" type="1f31426a:PackageElementNode" />
+              <item name="views" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
@@ -985,6 +983,14 @@
               <item name="SmaliNavigator" type="b2602c69:ProjectViewProjectNode" />
               <item name="smaliNavigator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SmaliNavigator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smaliNavigator" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
@@ -1005,11 +1011,12 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/WandererN/IdeaProjects/smaliNavigator/src/main/kotlin/ConfigFormat.kt" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538513341959" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539120153044" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="junit.framework.TestCase" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/kotlin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/debugRoot" />
     <property name="settings.editor.selected.configurable" value="Template Data Languages" />
   </component>
   <component name="RecentsManager">
@@ -1057,13 +1064,13 @@
   <component name="RunManager" selected="Kotlin.com.jh.SmaliAppLauncher">
     <configuration name="com.jh.SmaliAppLauncher" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="SmaliNavigator_main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.jh.SmaliAppLauncher" />
-      <option name="WORKING_DIRECTORY" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/debugRoot" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -1175,7 +1182,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23933902" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24200426" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1184,7 +1191,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49413645" visible="true" weight="0.29934925" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49413645" visible="true" weight="0.29934925" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.37852496" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1378,13 +1385,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Messages.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/AppConfig.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/javafx.base/javafx/beans/value/ObservableValue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -1463,12 +1463,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/views/SearchDialog.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/controllers/EditorWindowViewController.kt">
       <provider selected="true" editor-type-id="text-editor">
@@ -1478,20 +1478,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/views/SearchResultsView.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/views/ModernView.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/views/search/SearchTableDataClass.kt">
       <provider selected="true" editor-type-id="text-editor">
@@ -1524,21 +1516,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/views/ModernTabEditorView.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.fxmisc.richtext/richtextfx/0.9.1/c9078216383405f54f6508f6021afd0a18f1b815/richtextfx-0.9.1-sources.jar!/org/fxmisc/richtext/LineNumberFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="24" column="70" lean-forward="true" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1553,10 +1534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
           <caret line="1011" column="20" selection-start-line="1011" selection-start-column="20" selection-end-line="1011" selection-end-column="20" />
-          <folding>
-            <element signature="e#51361#51362#0" expanded="true" />
-            <element signature="e#51410#51411#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1564,34 +1541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/views/FileTabView.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/smaliStructs/SmaliMethod.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/views/search/SearchDialog.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/views/search/SearchResultsView.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="47" column="27" lean-forward="true" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1605,38 +1554,92 @@
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/SmaliAppLauncher.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernView.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/Workspace.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/util/Utils.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="84" column="34" lean-forward="true" selection-start-line="84" selection-start-column="34" selection-end-line="84" selection-end-column="34" />
+        <state relative-caret-position="479">
+          <caret line="105" column="29" selection-start-line="105" selection-start-column="29" selection-end-line="105" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/views/search/SearchResultsView.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/views/FileTabView.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding>
+            <element signature="e#22#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/views/search/SearchDialog.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/smaliStructs/SmaliMethod.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/AppConfig.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/Workspace.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernTabEditorView.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+        <state relative-caret-position="272">
+          <caret line="57" column="48" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
           <folding>
-            <element signature="e#22#303#0" expanded="true" />
+            <element signature="e#22#370#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/com/jh/views/ModernView.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/views/ModernTabEditorView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="56" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/views/ModernView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
         </state>
       </provider>
     </entry>
